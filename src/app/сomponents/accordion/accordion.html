@@ -1,0 +1,75 @@
+<li class="relative">
+  <div class="border transition-colors relative overflow-hidden"
+       [style.border-color]="isOpen ? '#f48f6b' : 'rgba(255,255,255,0.15)'"
+       [style.border-width]="isOpen ? '3px' : '1px'"
+       [class.bg-[#5c5380]]="isOpen"
+       [class.bg-[#3d2d52]]="!isOpen">
+
+    <!-- Top Left SVG - меняется цвет при открытии -->
+    <svg class="absolute pointer-events-none"
+         [class.top-1.5]="!isOpen"
+         [class.left-1.5]="!isOpen"
+         [class.top-0]="isOpen"
+         [class.left-0]="isOpen"
+         xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
+      @if (!isOpen) {
+        <path d="M0 0H23.3333L5.10417 5.45594L0 16V0Z" fill="#7E93A8"/>
+      }
+      @if (isOpen) {
+        <path opacity="0.5" d="M0 0H23.3333L5.10417 5.45594L0 16V0Z" fill="#F48F6B"/>
+      }
+    </svg>
+    
+    <!-- Top Right SVG - появляется только при открытии -->
+    @if (isOpen) {
+      <svg class="absolute top-0 right-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="30" height="36" viewBox="0 0 30 36" fill="none">
+        <path opacity="0.5" d="M30 0H0.666666L24.6964 5.35046L30 36V0Z" fill="#F48F6B"/>
+      </svg>
+    }
+    
+    <!-- Bottom Left SVG - появляется только при открытии -->
+    @if (isOpen) {
+      <svg class="absolute bottom-0 left-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="22" height="25" viewBox="0 0 22 25" fill="none">
+        <path opacity="0.5" d="M0 25H22L4.95 19.566L0 0.333334V25Z" fill="#F48F6B"/>
+      </svg>
+    }
+    
+    <!-- Bottom Right SVG - меняется цвет при открытии -->
+    <svg class="absolute pointer-events-none"
+         [class.bottom-1.5]="!isOpen"
+         [class.right-1.5]="!isOpen"
+         [class.bottom-0]="isOpen"
+         [class.right-0]="isOpen"
+         xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18" fill="none">
+      @if (!isOpen) {
+        <path d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" fill="#7E93A8"/>
+      }
+      @if (isOpen) {
+        <path opacity="0.5" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" fill="#F48F6B"/>
+      }
+    </svg>
+    
+    <button 
+      (click)="toggle()"
+      class="w-full flex items-center justify-between p-5 text-white transition-colors relative z-10">
+      <span class="font-['Sofia_Sans:ExtraBold'] text-xl text-left">{{ title }}</span>
+      <div class="flex-shrink-0">
+        <app-close-icon [isOpen]="isOpen"></app-close-icon>
+      </div>
+    </button>
+    <div class="overflow-hidden transition-all duration-300"
+         [class.max-h-0]="!isOpen"
+         [class.max-h-screen]="isOpen">
+      <div class="pt-4 pb-5 px-5">
+        <app-accordion-content 
+          [mainText]="mainText"
+          [items]="items">
+        </app-accordion-content>
+      </div>
+    </div>
+  </div>
+
+  @if (isOpen) {
+    <div class="absolute -bottom-1 left-0 right-0 h-1 bg-[#e84a11] shadow-[0_4px_8px_0_rgba(232,74,17,0.50)]"></div>
+  }
+</li>

@@ -1,0 +1,14 @@
+<div class="flex flex-col gap-4">
+    <!-- Основной текст -->
+    <p class="text-white leading-[133%] text-base font-light not-italic font-rubik">{{ mainText }}</p>
+    
+    <!-- Нумерованный список -->
+    <ol class="space-y-0">
+      <li *ngFor="let item of items; let last = last; let first = first" class="flex items-center gap-3 py-2 px-4"
+          [style.border-bottom]="!last ? '1px solid rgba(255, 255, 255, 0.15)' : 'none'"
+          [style.border-top]="first ? '1px solid rgba(255, 255, 255, 0.15)' : 'none'">
+        <span class="text-[#7e93a8] font-bold flex-shrink-0 pt-2 pb-2 pl-0 pr-3 text-base font-rubik">{{ item.number }}.</span>
+        <span class="text-white text-sm font-light not-italic leading-[133%] font-rubik" [innerHTML]="item.text"></span>
+      </li>
+    </ol>
+  </div>
