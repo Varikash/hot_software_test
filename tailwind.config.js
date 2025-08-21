@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         'rubik': ['Rubik', 'sans-serif'],
       },
+      screens: {
+        'mobile': {'max': '360px'},
+      },
     },
   },
   plugins: [],

@@ -51,7 +51,7 @@
     
     <button 
       (click)="toggle()"
-      class="w-full flex items-center justify-between p-5 text-white transition-colors relative z-10">
+      class="w-full flex items-center justify-between py-5 pl-6 pr-5 mobile:py-4 mobile:px-4 text-white transition-colors relative z-10">
       <span class="font-['Sofia_Sans:ExtraBold'] text-xl text-left">{{ title }}</span>
       <div class="flex-shrink-0">
         <app-close-icon [isOpen]="isOpen"></app-close-icon>
@@ -60,7 +60,7 @@
     <div class="overflow-hidden transition-all duration-300"
          [class.max-h-0]="!isOpen"
          [class.max-h-screen]="isOpen">
-      <div class="pt-4 pb-5 px-5">
+      <div class="py-5 pl-6 pr-5 mobile:py-4 mobile:px-4">
         <app-accordion-content 
           [mainText]="mainText"
           [items]="items">

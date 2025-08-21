@@ -2,14 +2,14 @@
 <div class="p-8 bg-gray-900 min-h-screen">
   <h1 class="text-white text-2xl mb-4">Тест аккордеона</h1>
   
-  <ul class="space-y-2 ">
+  <ul class="space-y-2 w-full">
     <app-accordion 
-      title="General Rules" 
-      [isOpen]="false"
-      [mainText]="mainText"
-      [items]="rulesList">
+      *ngFor="let accordion of accordionData"
+      [title]="accordion.title"
+      [mainText]="accordion.mainText"
+      [items]="accordion.rulesList">
     </app-accordion>
   </ul>
-</div>
+  </div>
 
 <router-outlet />
