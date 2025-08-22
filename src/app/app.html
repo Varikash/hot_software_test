@@ -1,15 +1,12 @@
 
 <div class="p-8 bg-gray-900 min-h-screen">
-  <h1 class="text-white text-2xl mb-4">Тест аккордеона</h1>
+  <h1 class="text-white text-2xl mb-4">Terms and Conditions</h1>
   
-  <ul class="space-y-2 w-full">
-    <app-accordion 
-      *ngFor="let accordion of accordionData"
-      [title]="accordion.title"
-      [mainText]="accordion.mainText"
-      [items]="accordion.rulesList">
-    </app-accordion>
-  </ul>
-  </div>
+  <app-terms-section 
+    *ngFor="let section of sectionsData"
+    [sectionTitle]="section.sectionTitle"
+    [accordions]="section.accordions">
+  </app-terms-section>
+</div>
 
 <router-outlet />

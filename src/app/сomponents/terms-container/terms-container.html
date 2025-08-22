@@ -1,0 +1,15 @@
+<div class="p-8 bg-gray-900 min-h-screen">
+    <h1 class="text-white text-2xl mb-4">Terms and Conditions</h1>
+  
+    <ul class="space-y-8">
+      @for (section of sectionsData; track section.sectionTitle; let sectionIndex = $index) {
+        <app-terms-section
+          [sectionTitle]="section.sectionTitle"
+          [accordions]="section.accordions"
+          [sectionIndex]="sectionIndex"
+          [openAccordionId]="openAccordionId"
+          (accordionToggle)="onAccordionToggle($event.sectionIndex, $event.accordionIndex)">
+        </app-terms-section>
+      }
+    </ul>
+  </div>

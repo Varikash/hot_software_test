@@ -1,0 +1,13 @@
+<li class="mb-8">
+    <h2 class="text-[#7E93A8] text-2xl tablet:text-xl tablet-s:text-xl mobile:text-xl font-['Sofia_Sans'] font-extrabold leading-[120%] mb-6">{{ sectionTitle }}</h2>
+    
+    <ul class="flex flex-col gap-2 w-full">
+      @for (accordion of accordions; track accordion.title) {
+        <app-accordion 
+          [title]="accordion.title"
+          [mainText]="accordion.mainText"
+          [items]="accordion.rulesList">
+        </app-accordion>
+      }
+    </ul>
+</li>
