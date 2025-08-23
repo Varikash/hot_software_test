@@ -1,3 +1,19 @@
+export interface AccordionItem {
+  number: string;
+  text: string;
+}
+
+export interface Accordion {
+  title: string;
+  mainText: string;
+  rulesList: AccordionItem[];
+}
+
+export interface Section {
+  sectionTitle: string;
+  accordions: Accordion[];
+}
+
 export const SECTIONS_DATA = [
     {
       sectionTitle: "Registration and Account",

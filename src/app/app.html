@@ -1,12 +1,2 @@
-
-<div class="p-8 bg-gray-900 min-h-screen">
-  <h1 class="text-white text-2xl mb-4">Terms and Conditions</h1>
-  
-  <app-terms-section 
-    *ngFor="let section of sectionsData"
-    [sectionTitle]="section.sectionTitle"
-    [accordions]="section.accordions">
-  </app-terms-section>
-</div>
-
+<app-terms-container></app-terms-container>
 <router-outlet />
