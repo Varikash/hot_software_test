@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TermsSectionComponent } from '../tems-section/terms-section';
 import { SECTIONS_DATA } from '../../constants/accordion-data';
@@ -31,5 +31,12 @@ export class TermsContainerComponent {
   // Проверяем, открыт ли конкретный аккордеон
   isAccordionOpen(sectionIndex: number, accordionIndex: number): boolean {
     return this.openAccordionId === `${sectionIndex}-${accordionIndex}`;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey() {
+    if (this.openAccordionId) {
+      this.openAccordionId = null;
+    }
   }
 }

@@ -1,0 +1,42 @@
+<section class="flex min-h-screen bg-[#312442] justify-center">
+  <app-content-wrapper>
+    <div class="flex gap-x-[72px] w-full">
+      <app-side-menu 
+        class="tablet:hidden tablet-s:hidden mobile:hidden"
+        [menuItems]="menuItems"
+        [activePage]="activePage"
+        (pageChange)="onPageChange($event)">
+      </app-side-menu>
+    
+      <main class="flex-1">
+        @if (activePage === 'terms') {
+          <app-terms-container></app-terms-container>
+        }
+        @if (activePage === 'privacy') {
+          <div class="p-8 text-white">
+            <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
+            <p>Privacy Policy content will be here...</p>
+          </div>
+        }
+        @if (activePage === 'responsible') {
+          <div class="p-8 text-white">
+            <h1 class="text-3xl font-bold mb-4">Responsible Gaming</h1>
+            <p>Responsible Gaming content will be here...</p>
+          </div>
+        }
+        @if (activePage === 'bonus') {
+          <div class="p-8 text-white">
+            <h1 class="text-3xl font-bold mb-4">Bonus Terms</h1>
+            <p>Bonus Terms content will be here...</p>
+          </div>
+        }
+        @if (activePage === 'contact') {
+          <div class="p-8 text-white">
+            <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
+            <p>Contact Us content will be here...</p>
+          </div>
+        }
+      </main>
+    </div>
+  </app-content-wrapper>
+</section>
