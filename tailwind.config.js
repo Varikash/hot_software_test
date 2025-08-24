@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'rubik': ['Rubik', 'sans-serif'],
+        'sofia': ['Sofia Sans', 'sans-serif'],
       },
       screens: {
         'mobile': {'max': '360px'},
