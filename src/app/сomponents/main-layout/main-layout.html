@@ -2,13 +2,13 @@
   <app-content-wrapper>
     <div class="flex gap-x-[72px] w-full">
       <app-side-menu 
-        class="tablet:hidden tablet-s:hidden mobile:hidden"
+        class="tablet:hidden tablet-s:hidden mobile:hidden sticky top-0 self-start"
         [menuItems]="menuItems"
         [activePage]="activePage"
         (pageChange)="onPageChange($event)">
       </app-side-menu>
     
-      <main class="flex-1">
+      <main class="flex-1 overflow-y-auto">
         @if (activePage === 'terms') {
           <app-terms-container></app-terms-container>
         }
