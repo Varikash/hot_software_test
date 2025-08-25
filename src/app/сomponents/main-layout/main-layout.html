@@ -1,4 +1,4 @@
-<section class="flex min-h-screen bg-[#312442] justify-center">
+<section class="flex bg-[#312442] justify-center">
   <app-content-wrapper>
     <div class="flex gap-x-[72px] w-full">
       <app-side-menu 
@@ -19,10 +19,7 @@
           </div>
         }
         @if (activePage === 'responsible') {
-          <div class="p-8 text-white">
-            <h1 class="text-3xl font-bold mb-4">Responsible Gaming</h1>
-            <p>Responsible Gaming content will be here...</p>
-          </div>
+          <app-gambling-content></app-gambling-content>
         }
         @if (activePage === 'bonus') {
           <div class="p-8 text-white">
